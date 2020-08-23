@@ -6,7 +6,7 @@
 
 To solve the problem of a Rubik's cube, we implemented **feature-based Q-Learning**, a powerful reinforcement learning technique, as well as **the utilization of a pattern database**, to quantify the quality of near-finished cubes
 
-this project assumes that a Rubik's cube can *only execute 180 degree side turns*, which greatly reduces the *branching factor* of the cube's *state space tree*
+this project assumes that a Rubik's cube can *only execute 180 degree face turns*, which greatly reduces the *branching factor* of the cube's *state space tree*
 
 this project also attempts to reach a solution for a solved cube which has had *n random moves executed on it*, this value n
 currently can be up to 5 to find a goal state for each execution, or in the range of 6-10 to be somewhat successful

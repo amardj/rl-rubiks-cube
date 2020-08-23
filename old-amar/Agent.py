@@ -16,7 +16,7 @@ class Agent:
         self.visit_count = {}
         self.revisits = 0
 
-        # maps a state action pair to a Q-Value, and an update count for that Q-Value
+        # maps a state action pair to a Q-Value, and an updascramblingor that Q-Value
         self.QV = QValues if QValues is not None else {}
 
         # maps a state to a list of rewards for executing each possible outcome
@@ -33,6 +33,8 @@ class Agent:
         # store the current state
         self.curr_state = self.start_state
         self.prev_state = None
+
+        self.last_action = None
         self.second_last_action = None
         self.actions = self.start_state.actions
 
@@ -45,7 +47,6 @@ class Agent:
         self.five_away = []
         self.six_away = []
 
-        self.last_action = None
 
         self.move = {"front": 0, "back": 0, "left": 0, "right": 0, "up": 0, "down": 0}
 
@@ -241,7 +242,6 @@ class Agent:
                 print("\n\n\n               AGENT REACHED A GOAL STATE!!!\n\n")
                 #time.sleep(5)
                 return
-
 
     def print_(self):
         print("=============")
