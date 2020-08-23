@@ -6,9 +6,13 @@ import time
 
 # state object
 class State:
+
+    # Define the size of the Rubik's cube in parameter "size", where 3, means 3x3
     def __init__(self, size=3, c=None):
         self.size = size
+
         self.actions = ['front', 'back', 'left', 'right', 'up', 'down']
+
         if c:
             self.d = c
             self.__front__ = c["front"]
@@ -22,25 +26,31 @@ class State:
 
             return
 
-        # create array of values 1-6 for different colors
+        # create and array of values 1-6 for different colors for cube faces
         # and multiply by number of pieces per size to get
-        # equal amount of each color (white. black, red, orange, green, yellow)
+        # equal amount of each color (white, blue, red, orange, green, yellow)
 
         '''nums = ['W','B','R','O','G','Y']*(size**2)
         
         # shuffle numbers
-        
+
         shuffle(nums)
+
         front, nums = nums[0:size**2],nums[size**2:]
         self.__front__ = [front[i:i + size] for i in range(0,len(front), size)]
+
         back, nums = nums[0:size**2],nums[size**2:]
         self.__back__ = [back[i:i + size] for i in range(0,len(front), size)]
+
         left, nums = nums[0:size**2],nums[size**2:]
         self.__left__ = [left[i:i + size] for i in range(0,len(front), size)]
+
         right, nums = nums[0:size**2],nums[size**2:]
         self.__right__ = [right[i:i + size] for i in range(0,len(front), size)]
+
         up, nums = nums[0:size**2],nums[size**2:]
         self.__up__ = [up[i:i + size] for i in range(0,len(front), size)]
+
         down, nums = nums[0:size**2],nums[size**2:]
         self.__down__ = [down[i:i + size] for i in range(0,len(front), size)]'''
 
@@ -56,13 +66,13 @@ class State:
         self.d = {"front": self.front(), "back": self.back(), "left": self.left(), \
                   "right": self.right(), "up": self.up(), "down": self.down()}
 
-    # return new copy of State
+    # return new copy of State using the copy library and a deep copy functionality
     def copy(self):
         # d = copy.deepcopy(self.d)
-        new_s = copy.deepcopy(self)
-        return new_s
+        copied_state = copy.deepcopy(self)
+        return copied_state
 
-    # equality tested for cube
+    # equality tested for the cube
     def eq(self, other):
         return self.__left__ == other.left() and self.__right__ == other.right() \
                and self.__up__ == other.up() and self.__down__ == other.down() \
@@ -360,7 +370,6 @@ def num_xs(state):
 
 
 import random
-
 
 def n_move_state(n=5):
     cube = State()
