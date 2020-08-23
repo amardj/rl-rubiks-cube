@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/acdl-project-rubiks-cube-rl-amar/acdl-project-rubiks-cube-rl-amar.iml" filepath="$PROJECT_DIR$/acdl-project-rubiks-cube-rl-amar/acdl-project-rubiks-cube-rl-amar.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rl-rubiks-cube.iml" filepath="$PROJECT_DIR$/.idea/rl-rubiks-cube.iml" />
     </modules>
   </component>
